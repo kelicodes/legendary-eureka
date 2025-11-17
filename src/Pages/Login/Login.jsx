@@ -21,7 +21,7 @@ const Login = () => {
     try {
       if (logstate === "signup") {
         const response = await axios.post(
-          "https://goldback2.onrender.com/user/reg",
+          "https://thegoldfina.onrender.com/user/reg",
           { name, email, password }
         );
 
@@ -41,7 +41,7 @@ const Login = () => {
         }
       } else if (logstate === "login") {
         const response = await axios.post(
-          "https://goldback2.onrender.com/user/login",
+          "https://thegoldfina.onrender.com/user/login",
           { email, password }
         );
 

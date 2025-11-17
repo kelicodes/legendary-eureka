@@ -12,7 +12,7 @@ const Orders = () => {
     try {
       const token = localStorage.getItem("token"); // token only auth
       const response = await axios.get(
-        "https://goldback2.onrender.com/orders/all",
+        "https://thegoldfina.onrender.com/orders/all",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -37,7 +37,7 @@ const Orders = () => {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.put(
-        `https://goldback2.onrender.com/orders/update/${orderId}`,
+        `https://thegoldfina.onrender.com/orders/update/${orderId}`,
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );
