@@ -54,6 +54,9 @@ const Orders = () => {
     fetchOrders();
   }, []);
 
+  // Calculate total funds
+  const totalFunds = orders.reduce((sum, order) => sum + (order.totalAmount || 0), 0);
+
   if (loading) return <p className="loading-text">Loading your orders...</p>;
   if (!orders || orders.length === 0) return <p className="no-orders-text">You have no orders yet.</p>;
 
@@ -61,7 +64,10 @@ const Orders = () => {
 
   return (
     <div className="orders-container">
-      <h2 className="orders-title">My Orders</h2>
+      <div className="orders-header">
+        <h2 className="orders-title">My Orders</h2>
+        <div className="total-revenue">Total Funds: KES {totalFunds}</div>
+      </div>
 
       {orders.map((order, orderIndex) => (
         <div key={`${order._id}-${orderIndex}`} className="order-card">

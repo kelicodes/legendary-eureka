@@ -20,7 +20,6 @@ const Orders = () => {
 
       if (response.data.success) {
         setOrders(response.data.orders);
-        console.log(orders)
       } else {
         toast.error(response.data.message || "Failed to fetch orders");
       }
@@ -66,6 +65,12 @@ const Orders = () => {
   if (!orders || orders.length === 0)
     return <p className="no-orders-text">You have no orders yet.</p>;
 
+  // Calculate total revenue
+  const totalRevenue = orders.reduce(
+    (acc, order) => acc + Number(order.totalAmount || 0),
+    0
+  );
+
   const allowedStatuses = [
     "Pending",
     "Paid",
@@ -77,7 +82,13 @@ const Orders = () => {
 
   return (
     <div className="orders-container">
-      <h2 className="orders-title">My Orders</h2>
+      <div className="orders-header">
+        <h2 className="orders-title">My Orders</h2>
+        <div className="total-revenue">
+          Total Revenue: KES {totalRevenue.toLocaleString()}
+        </div>
+      </div>
+
       {orders.map((order) => (
         <div key={order._id} className="order-card">
           <div className="order-header">
