@@ -99,10 +99,15 @@ import "./Add.css"
         </div>
         <textarea value={desc} onChange={(e)=>setDesc(e.target.value)} placeholder="productdescription"></textarea>
         <select value={category} onChange={(e)=>setCategory(e.target.value)}>
-            <option value="">Selevt category.</option>
-            <option value={"shoe"}>shoe</option>
-            <option value={"shirt"}>Shirt</option>
-            <option value={"trouser"}>Trouser</option>
+            <option value="">Select category.</option>
+            <option value={"Bags"}>Bags</option>
+            <option value={"t-shirts"}>Accessories</option>
+            <option value={"Skirts/Dresses"}>Skirts/Dresses</option>
+            <option value={"trousers"}>trousers</option>
+            <option value={"combo"}>combo</option>
+
+            
+
         </select>
 
         <button>Submit</button>

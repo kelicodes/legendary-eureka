@@ -6,6 +6,7 @@ import Login from "./Pages/Login/Login.jsx";
 import Navbar from "./Components/Navbar/Navbar.jsx";
 import Sidebar from "./Components/Sidebar/Sidebar.jsx";
 import Orders from "./Components/Mockorder/Mock.jsx";
+import AvatarDisplay from "./Pages/Admin/Admin.jsx";
 
 const App = () => {
   const location = useLocation();
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/list" element={<List />} />
           <Route path="/" element={<Login/>}/>
           <Route path="/Orders" element={<Orders/>} />
+          <Route path="/avatar" element={<AvatarDisplay/>}/>
         </Routes>
       </div>
     </div>
