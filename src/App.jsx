@@ -1,5 +1,6 @@
 import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
+import { useState } from "react";
 import Add from "./Pages/Add/Add.jsx";
 import List from "./Pages/List/List.jsx";
 import Login from "./Pages/Login/Login.jsx";
@@ -10,9 +11,16 @@ import AvatarDisplay from "./Pages/Admin/Admin.jsx";
 
 const App = () => {
   const location = useLocation();
+  const [paid,setPaid]=useState(false)
 
   // Check if current path is login page
   const isLoginPage = location.pathname === "/";
+
+  if(!paid){
+    return (
+      <p>GOLDSTORE</p>
+    )
+  }
 
   return (
     <div className="app">
