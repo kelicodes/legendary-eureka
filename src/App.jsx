@@ -11,7 +11,7 @@ import AvatarDisplay from "./Pages/Admin/Admin.jsx";
 
 const App = () => {
   const location = useLocation();
-  const [paid,setPaid]=useState(false)
+  const [paid,setPaid]=useState(true)
 
   // Check if current path is login page
   const isLoginPage = location.pathname === "/";
